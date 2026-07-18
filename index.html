@@ -68,55 +68,94 @@
 
     <section class="section">
 
-        <h2>📍 おすすめ撮影スポット</h2>
+    <h2>📍 おすすめ撮影スポット</h2>
 
-        <div class="spot-grid">
+    <!-- 昼・夜切り替え -->
+    <div class="time-tabs">
 
-            <div class="spot-card">
+        <button class="time-tab active" data-time="day">
+            ☀ 昼
+        </button>
 
-                <img src="images/test.png">
+        <button class="time-tab" data-time="night">
+            🌙 夜
+        </button>
 
-                <div class="spot-body">
+    </div>
 
-                    <h3>ビーチ</h3>
 
-                    <p>夕日が映える人気No.1スポット</p>
+    <div class="spot-grid">
 
-                </div>
 
-            </div>
+        <!-- ビーチ -->
 
-            <div class="spot-card">
+        <div class="spot-card">
 
-                <img src="images/test.png">
+            <img
+                class="spot-image"
+                data-day="images/beach-day.jpg"
+                data-night="images/beach-night.jpg"
+                src="images/beach-day.jpg"
+            >
 
-                <div class="spot-body">
+            <div class="spot-body">
 
-                    <h3>チャペル</h3>
+                <h3>ビーチ</h3>
 
-                    <p>クラシカルな雰囲気が魅力</p>
-
-                </div>
-
-            </div>
-
-            <div class="spot-card">
-
-                <img src="images/test.png">
-
-                <div class="spot-body">
-
-                    <h3>ガーデン</h3>
-
-                    <p>自然に囲まれた開放感あるロケーション</p>
-
-                </div>
+                <p>海を背景にした開放感のある撮影スポット</p>
 
             </div>
 
         </div>
 
-    </section>
+
+        <!-- チャペル -->
+
+        <div class="spot-card">
+
+            <img
+                class="spot-image"
+                data-day="images/chapel-day.jpg"
+                data-night="images/chapel-night.jpg"
+                src="images/chapel-day.jpg"
+            >
+
+            <div class="spot-body">
+
+                <h3>チャペル</h3>
+
+                <p>クラシカルで上品な雰囲気の撮影スポット</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ガーデン -->
+
+        <div class="spot-card">
+
+            <img
+                class="spot-image"
+                data-day="images/garden-day.jpg"
+                data-night="images/garden-night.jpg"
+                src="images/garden-day.jpg"
+            >
+
+            <div class="spot-body">
+
+                <h3>ガーデン</h3>
+
+                <p>自然に囲まれたナチュラルな撮影スポット</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
     
 </body>
 
