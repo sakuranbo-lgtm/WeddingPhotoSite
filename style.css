@@ -189,3 +189,52 @@ body{
     color:white;
 
 }
+
+/* カード内の昼夜タブ */
+
+.card-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+.card-tab{
+
+    flex:1;
+
+    padding:10px;
+
+    border:1px solid #b38b59;
+
+    background:white;
+
+    color:#b38b59;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.card-tab:hover{
+
+    background:#f1e6d5;
+
+}
+
+
+.card-tab.active{
+
+    background:#b38b59;
+
+    color:white;
+
+}
