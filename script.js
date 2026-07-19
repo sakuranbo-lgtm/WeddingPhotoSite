@@ -1,6 +1,6 @@
-const tabs = document.querySelectorAll(".time-tab");
+// const tabs = document.querySelectorAll(".time-tab");
 
-const images = document.querySelectorAll(".spot-image");
+// const images = document.querySelectorAll(".spot-image");
 
 
 // tabs.forEach(tab => {
