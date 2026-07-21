@@ -238,3 +238,83 @@ body{
     color:white;
 
 }
+
+
+/* ================================
+   スマホ対応
+================================ */
+
+@media (max-width: 768px) {
+
+    /* セクションの横幅 */
+    .section {
+        width: auto;
+        margin: 60px 20px;
+    }
+
+
+    /* 見出し */
+    .section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+
+    /* プラン概要 */
+    .plan-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+
+    .plan-card {
+        padding: 20px 10px;
+    }
+
+
+    .plan-card h3 {
+        font-size: 15px;
+    }
+
+
+    .plan-card p {
+        font-size: 13px;
+    }
+
+
+    /* 完成イメージ */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    .gallery img {
+        height: 300px;
+    }
+
+
+    /* おすすめスポット */
+    .spot-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .spot-card {
+        width: 100%;
+    }
+
+
+    .spot-card img {
+        height: 260px;
+    }
+
+
+    /* カード内の昼夜タブ */
+    .card-tab {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+}
