@@ -11,7 +11,6 @@ const spots = [
         }
     },
 
-
     {
         name: "チャペル",
 
@@ -22,7 +21,6 @@ const spots = [
             night: "images/test_night.png"
         }
     },
-
 
     {
         name: "ガーデン",
