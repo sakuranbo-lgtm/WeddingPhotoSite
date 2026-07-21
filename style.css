@@ -13,10 +13,6 @@ body {
     font-family: "Noto Serif JP", serif;
 
     background:
-        linear-gradient(
-            rgba(250, 247, 241, 0.5),
-            rgba(250, 247, 241, 0.5)
-        ),
         url("images/background.jpg");
 
     background-size: cover;
