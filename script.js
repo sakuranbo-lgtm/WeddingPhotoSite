@@ -1,14 +1,62 @@
-// すべてのスポットカードを取得
-const cards = document.querySelectorAll(".spot-card");
+// スポットを表示する場所
+const spotList = document.querySelector("#spot-list");
 
 
-// 各スポットカードを処理
-cards.forEach(card => {
+// spots.jsのデータからカードを作成
+spots.forEach(spot => {
 
-    // カード内の画像を取得
+    // カードを作成
+    const card = document.createElement("div");
+
+    card.className = "spot-card";
+
+
+    // カードのHTMLを作成
+    card.innerHTML = `
+
+        <img
+            class="spot-image"
+            src="${spot.images.day}"
+        >
+
+        <div class="spot-body">
+
+            <h3>${spot.name}</h3>
+
+            <p>${spot.description}</p>
+
+            <div class="card-tabs">
+
+                <button
+                    class="card-tab active"
+                    data-time="day"
+                >
+                    ☀ 昼
+                </button>
+
+                <button
+                    class="card-tab"
+                    data-time="night"
+                >
+                    🌙 夜
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    // カードを画面に追加
+    spotList.appendChild(card);
+
+
+    // 作成した画像を取得
     const image = card.querySelector(".spot-image");
 
-    // カード内の昼夜タブを取得
+
+    // 作成したタブを取得
     const tabs = card.querySelectorAll(".card-tab");
 
 
@@ -20,14 +68,12 @@ cards.forEach(card => {
             // day または night を取得
             const time = this.dataset.time;
 
-            console.log("クリック:", time);
+
+            // 画像を変更
+            image.src = spot.images[time];
 
 
-            // 画像を切り替え
-            image.src = image.dataset[time];
-
-
-            // すべてのタブから active を削除
+            // すべてのタブからactiveを削除
             tabs.forEach(tab => {
 
                 tab.classList.remove("active");
@@ -35,7 +81,7 @@ cards.forEach(card => {
             });
 
 
-            // クリックしたタブを active にする
+            // クリックしたタブをactiveにする
             this.classList.add("active");
 
         });
