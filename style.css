@@ -1,320 +1,400 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ========================================
+   全体設定
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
+    color: #3b342d;
+    font-family: "Noto Serif JP", serif;
 
-    background:#f7f4ef;
+    background:
+        linear-gradient(
+            rgba(250, 247, 241, 0.94),
+            rgba(250, 247, 241, 0.94)
+        ),
+        url("images/background.jpg");
 
-    font-family:"Yu Gothic";
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
-    color:#333;
-
-}
-
-.section{
-
-    width:1200px;
-
-    margin:100px auto;
-
-}
-
-.section h2{
-
-    text-align:center;
-
-    font-size:40px;
-
-    margin-bottom:50px;
-
-}
-
-.plan-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-}
-
-.plan-card{
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-.plan-card h3{
-
-    margin-bottom:15px;
-
-    color:#b38b59;
-
+    line-height: 1.8;
 }
 
 
+/* ========================================
+   セクション
+======================================== */
 
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
+.section {
+    width: 1200px;
+    max-width: calc(100% - 40px);
+    margin: 100px auto;
 }
 
-.gallery img{
+.section h2 {
+    position: relative;
+    text-align: center;
 
-    width:100%;
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif JP",
+        serif;
 
-    height:400px;
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
 
-    object-fit:cover;
+    color: #8c6b3e;
 
-    border-radius:15px;
-
-}
-
-
-
-.spot-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.spot-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-    transition:.3s;
-
-}
-
-.spot-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.spot-card img{
-
-    width:100%;
-
-    height:280px;
-
-    object-fit:cover;
-
-}
-
-.spot-body{
-
-    padding:25px;
-
-}
-
-.spot-body h3{
-
-    margin-bottom:10px;
-
-    color:#b38b59;
-
-}
-
-.time-tabs{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    margin-bottom:40px;
-
-}
-
-.time-tab{
-
-    padding:14px 45px;
-
-    border:1px solid #b38b59;
-
-    background:white;
-
-    color:#b38b59;
-
-    border-radius:30px;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.time-tab:hover{
-
-    background:#f1e6d5;
-
-}
-
-.time-tab.active{
-
-    background:#b38b59;
-
-    color:white;
-
-}
-
-/* カード内の昼夜タブ */
-
-.card-tabs{
-
-    display:flex;
-
-    gap:10px;
-
-    margin-top:20px;
-
+    margin-bottom: 50px;
 }
 
 
-.card-tab{
+/* 見出しの装飾 */
 
-    flex:1;
+.section h2::after {
+    content: "✦";
 
-    padding:10px;
+    display: block;
 
-    border:1px solid #b38b59;
+    font-size: 18px;
 
-    background:white;
+    margin-top: 10px;
 
-    color:#b38b59;
-
-    border-radius:20px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    color: #b89a6a;
 }
 
 
-.card-tab:hover{
+/* ========================================
+   フォトプラン概要
+======================================== */
 
-    background:#f1e6d5;
+.plan-grid {
+    display: grid;
 
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.plan-card {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid rgba(180, 145, 95, 0.35);
+
+    box-shadow:
+        0 10px 30px rgba(80, 60, 40, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(80, 60, 40, 0.14);
+}
+
+.plan-card h3 {
+    margin-bottom: 15px;
+
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif JP",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    color: #8c6b3e;
+}
+
+.plan-card p {
+    font-size: 15px;
 }
 
 
-.card-tab.active{
+/* ========================================
+   完成イメージ
+======================================== */
 
-    background:#b38b59;
+.gallery {
+    display: grid;
 
-    color:white;
+    grid-template-columns: repeat(3, 1fr);
 
+    gap: 25px;
+}
+
+.gallery img {
+    width: 100%;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    display: block;
+
+    box-shadow:
+        0 10px 25px rgba(80, 60, 40, 0.12);
+
+    transition: all 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.02);
 }
 
 
-/* ================================
+/* ========================================
+   おすすめ撮影スポット
+======================================== */
+
+.spot-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* スポットカード */
+
+.spot-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(180, 145, 95, 0.35);
+
+    box-shadow:
+        0 10px 30px rgba(80, 60, 40, 0.1);
+
+    transition: all 0.4s ease;
+}
+
+.spot-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(80, 60, 40, 0.16);
+}
+
+
+/* スポット写真 */
+
+.spot-image {
+    width: 100%;
+
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* スポット情報 */
+
+.spot-body {
+    padding: 25px;
+}
+
+.spot-body h3 {
+    margin-bottom: 10px;
+
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif JP",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    color: #8c6b3e;
+}
+
+.spot-body p {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    color: #665c52;
+}
+
+
+/* ========================================
+   昼・夜タブ
+======================================== */
+
+.card-tabs {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.card-tab {
+    flex: 1;
+
+    padding: 10px;
+
+    font-family: "Noto Serif JP", serif;
+
+    font-size: 14px;
+
+    border: 1px solid #b89a6a;
+
+    border-radius: 20px;
+
+    background: transparent;
+
+    color: #8c6b3e;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.card-tab:hover {
+    background: #f3ede3;
+}
+
+.card-tab.active {
+    background: #a88a5a;
+
+    color: white;
+}
+
+
+/* ========================================
    スマホ対応
-================================ */
+======================================== */
 
 @media (max-width: 768px) {
 
-    /* セクションの横幅 */
     .section {
         width: auto;
-        margin: 60px 20px;
+
+        max-width: none;
+
+        margin: 65px 20px;
     }
 
-
-    /* 見出し */
     .section h2 {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
+        font-size: 30px;
 
+        margin-bottom: 35px;
+    }
 
     /* プラン概要 */
+
     .plan-grid {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 12px;
     }
 
-
     .plan-card {
-        padding: 20px 10px;
+        padding: 22px 10px;
     }
-
 
     .plan-card h3 {
-        font-size: 15px;
+        font-size: 17px;
     }
-
 
     .plan-card p {
-        font-size: 13px;
+        font-size: 12px;
     }
-
 
     /* 完成イメージ */
+
     .gallery {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
 
+        gap: 18px;
+    }
 
     .gallery img {
         height: 300px;
     }
 
+    /* スポット */
 
-    /* おすすめスポット */
     .spot-grid {
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
-
-    .spot-card {
-        width: 100%;
-    }
-
-
-    .spot-card img {
+    .spot-image {
         height: 260px;
     }
 
+    .spot-body {
+        padding: 22px;
+    }
 
-    /* カード内の昼夜タブ */
+    .spot-body h3 {
+        font-size: 25px;
+    }
+
+    .spot-body p {
+        font-size: 13px;
+    }
+
+    /* 昼夜タブ */
+
     .card-tab {
-        padding: 12px 8px;
-        font-size: 14px;
+        padding: 11px 8px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   小さいスマホ対応
+======================================== */
+
+@media (max-width: 400px) {
+
+    .section {
+        margin-left: 15px;
+
+        margin-right: 15px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .plan-card h3 {
+        font-size: 15px;
+    }
+
+    .plan-card p {
+        font-size: 11px;
     }
 
 }
