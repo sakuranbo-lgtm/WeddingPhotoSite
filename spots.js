@@ -9,7 +9,7 @@ const spots = [
             {
                 id: "day",
                 label: "☀ 昼",
-                image: "images/beach_day.png"
+                image: "images/beach_day.webp"
             },
             {
                 id: "night",
