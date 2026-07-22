@@ -1,16 +1,26 @@
+// スポットを表示する場所
 const spotList = document.querySelector("#spot-list");
 
+
+// spots.jsのデータからカードを作成
 spots.forEach(spot => {
 
+    // カードを作成
     const card = document.createElement("div");
 
     card.className = "spot-card";
 
+
+    // 最初のモードを取得
+    const firstMode = spot.modes[0];
+
+
+    // カードのHTMLを作成
     card.innerHTML = `
 
         <img
             class="spot-image"
-            src="${spot.images.day}"
+            src="${firstMode.image}"
         >
 
         <div class="spot-body">
@@ -21,19 +31,16 @@ spots.forEach(spot => {
 
             <div class="card-tabs">
 
-                <button
-                    class="card-tab active"
-                    data-time="day"
-                >
-                    ☀ 昼
-                </button>
+                ${spot.modes.map((mode, index) => `
 
-                <button
-                    class="card-tab"
-                    data-time="night"
-                >
-                    🌙 夜
-                </button>
+                    <button
+                        class="card-tab ${index === 0 ? "active" : ""}"
+                        data-mode="${mode.id}"
+                    >
+                        ${mode.label}
+                    </button>
+
+                `).join("")}
 
             </div>
 
@@ -41,26 +48,47 @@ spots.forEach(spot => {
 
     `;
 
+
+    // カードを画面に追加
     spotList.appendChild(card);
 
+
+    // カード内の画像を取得
     const image = card.querySelector(".spot-image");
 
+
+    // カード内のボタンを取得
     const tabs = card.querySelectorAll(".card-tab");
 
+
+    // ボタンにクリックイベントを設定
     tabs.forEach(tab => {
 
         tab.addEventListener("click", function () {
 
-            const time = this.dataset.time;
+            // クリックされたモードIDを取得
+            const modeId = this.dataset.mode;
 
-            image.src = spot.images[time];
 
+            // 対応するモードを探す
+            const selectedMode = spot.modes.find(
+                mode => mode.id === modeId
+            );
+
+
+            // 画像を変更
+            image.src = selectedMode.image;
+
+
+            // すべてのボタンからactiveを削除
             tabs.forEach(tab => {
 
                 tab.classList.remove("active");
 
             });
 
+
+            // クリックしたボタンをactiveにする
             this.classList.add("active");
 
         });

@@ -5,32 +5,58 @@ const spots = [
 
         description: "海を背景にした開放感のある撮影スポット",
 
-        images: {
-            day: "images/test.png",
-            night: "images/test_night.png"
-        }
+        modes: [
+            {
+                id: "day",
+                label: "☀ 昼",
+                image: "images/test.png"
+            },
+            {
+                id: "night",
+                label: "🌙 夜",
+                image: "images/test_night.png"
+            }
+        ]
     },
+
 
     {
         name: "チャペル",
 
         description: "クラシカルで上品な雰囲気の撮影スポット",
 
-        images: {
-            day: "images/aaa.png",
-            night: "images/test_night.png"
-        }
+        modes: [
+            {
+                id: "inside",
+                label: "🏠 室内",
+                image: "images/aaa.png"
+            },
+            {
+                id: "outside",
+                label: "🌳 外",
+                image: "images/test_night.png"
+            }
+        ]
     },
+
 
     {
         name: "ガーデン",
 
         description: "自然に囲まれたナチュラルな撮影スポット",
 
-        images: {
-            day: "images/test_night.png",
-            night: "images/garden-night.jpg"
-        }
+        modes: [
+            {
+                id: "day",
+                label: "☀ 昼",
+                image: "images/test_night.png"
+            },
+            {
+                id: "night",
+                label: "🌙 夜",
+                image: "images/garden-night.jpg"
+            }
+        ]
     }
 
 ];
