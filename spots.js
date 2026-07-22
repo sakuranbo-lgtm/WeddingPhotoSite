@@ -9,7 +9,7 @@ const spots = [
             {
                 id: "day",
                 label: "☀ 昼",
-                image: "images/test.png"
+                image: "images/beach_day.png"
             },
             {
                 id: "night",
@@ -29,12 +29,12 @@ const spots = [
             {
                 id: "inside",
                 label: "🏠 室内",
-                image: "images/aaa.png"
+                image: "images/chapel_in.webp"
             },
             {
                 id: "outside",
                 label: "🌳 外",
-                image: "images/test_night.png"
+                image: "images/chapel_out.webp"
             }
         ]
     },
