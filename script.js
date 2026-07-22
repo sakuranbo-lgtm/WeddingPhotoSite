@@ -96,3 +96,69 @@ spots.forEach(spot => {
     });
 
 });
+
+// ========================================
+// 画像拡大表示機能
+// ========================================
+
+const modal = document.querySelector("#image-modal");
+
+const modalImage = document.querySelector("#modal-image");
+
+const closeButton = document.querySelector("#modal-close");
+
+
+// 画像をクリックしたとき
+document.addEventListener("click", function (event) {
+
+    // 完成イメージまたはスポット画像か確認
+    if (
+
+        event.target.matches(".gallery img") ||
+
+        event.target.matches(".spot-image")
+
+    ) {
+
+        // クリックされた画像をモーダルに表示
+        modalImage.src = event.target.src;
+
+
+        // モーダルを表示
+        modal.classList.add("active");
+
+    }
+
+});
+
+
+// ×ボタンで閉じる
+closeButton.addEventListener("click", function () {
+
+    modal.classList.remove("active");
+
+});
+
+
+// 背景をクリックして閉じる
+modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+
+        modal.classList.remove("active");
+
+    }
+
+});
+
+
+// ESCキーで閉じる
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        modal.classList.remove("active");
+
+    }
+
+});

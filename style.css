@@ -436,3 +436,78 @@ body {
     }
 
 }
+
+/* ========================================
+   画像拡大表示
+======================================== */
+
+.image-modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* モーダル表示中 */
+
+.image-modal.active {
+
+    display: flex;
+
+}
+
+
+/* 拡大画像 */
+
+#modal-image {
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+}
+
+
+/* 閉じるボタン */
+
+.modal-close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    z-index: 10000;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+}
