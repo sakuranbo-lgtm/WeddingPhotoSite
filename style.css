@@ -337,10 +337,52 @@ body {
 
     /* スポット */
 
-    .spot-grid {
-        grid-template-columns: 1fr;
+    /* ================================
+   スマホ：スポット横スクロール
+    ================================ */
 
-        gap: 25px;
+@media (max-width: 768px) {
+
+    .spot-grid {
+
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 16px;
+
+        padding: 10px 5px 20px;
+
+        scroll-snap-type: x mandatory;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+    .spot-card {
+
+        flex: 0 0 85%;
+
+        scroll-snap-align: start;
+
+    }
+
+
+    /* スクロールバーを非表示 */
+
+    .spot-grid::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+
+    .spot-grid {
+
+        scrollbar-width: none;
+
+    }
     }
 
     .spot-image {
