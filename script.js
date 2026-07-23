@@ -1,4 +1,103 @@
-// スポットを表示する場所
+// ========================================
+// アルバムデザイン表示
+// ========================================
+
+const albumList = document.querySelector("#album-list");
+
+
+// albums.jsのデータからカードを作成
+albums.forEach(album => {
+
+    const card = document.createElement("div");
+
+    card.className = "album-card";
+
+
+    // アルバムカードのHTML
+    card.innerHTML = `
+
+        <img
+            class="album-cover"
+            src="${album.cover}"
+            alt="${album.name}"
+        >
+
+        <div class="album-body">
+
+            <h3>${album.name}</h3>
+
+            <p>${album.description}</p>
+
+        </div>
+
+    `;
+
+
+    // カードを画面に追加
+    albumList.appendChild(card);
+
+
+    // カードをクリックしたとき
+    card.addEventListener("click", function () {
+
+    // モーダルにタイトルを表示
+    document.querySelector("#album-modal-title").textContent =
+        album.name;
+
+
+    // 説明文を表示
+    document.querySelector("#album-modal-description").textContent =
+        album.description;
+
+
+    // 中面を表示する場所
+    const pages =
+        document.querySelector("#album-pages");
+
+
+    // 一度空にする
+    pages.innerHTML = "";
+
+
+    // 表紙を表示
+    const cover = document.createElement("img");
+
+    cover.src = album.cover;
+
+    cover.alt = album.name;
+
+    pages.appendChild(cover);
+
+
+    // 中面を表示
+    album.pages.forEach(page => {
+
+        const image = document.createElement("img");
+
+        image.src = page;
+
+        image.alt = album.name;
+
+        pages.appendChild(image);
+
+    });
+
+
+    // モーダルを表示
+    document
+        .querySelector("#album-modal")
+        .classList.add("active");
+
+    });
+
+});
+
+
+
+// ========================================
+// スポット表示
+// ========================================
+
 const spotList = document.querySelector("#spot-list");
 
 
@@ -15,12 +114,13 @@ spots.forEach(spot => {
     const firstMode = spot.modes[0];
 
 
-    // カードのHTMLを作成
+    // カードのHTML
     card.innerHTML = `
 
         <img
             class="spot-image"
             src="${firstMode.image}"
+            alt="${spot.name}"
         >
 
         <div class="spot-body">
@@ -53,24 +153,24 @@ spots.forEach(spot => {
     spotList.appendChild(card);
 
 
-    // カード内の画像を取得
+    // 画像を取得
     const image = card.querySelector(".spot-image");
 
 
-    // カード内のボタンを取得
+    // ボタンを取得
     const tabs = card.querySelectorAll(".card-tab");
 
 
-    // ボタンにクリックイベントを設定
+    // 昼・夜などのボタン
     tabs.forEach(tab => {
 
         tab.addEventListener("click", function () {
 
-            // クリックされたモードIDを取得
+            // クリックされたモード
             const modeId = this.dataset.mode;
 
 
-            // 対応するモードを探す
+            // 対応する画像を探す
             const selectedMode = spot.modes.find(
                 mode => mode.id === modeId
             );
@@ -80,7 +180,7 @@ spots.forEach(spot => {
             image.src = selectedMode.image;
 
 
-            // すべてのボタンからactiveを削除
+            // activeをすべて削除
             tabs.forEach(tab => {
 
                 tab.classList.remove("active");
@@ -88,7 +188,7 @@ spots.forEach(spot => {
             });
 
 
-            // クリックしたボタンをactiveにする
+            // クリックしたボタンをactive
             this.classList.add("active");
 
         });
@@ -97,8 +197,10 @@ spots.forEach(spot => {
 
 });
 
+
+
 // ========================================
-// 画像拡大表示機能
+// 画像拡大表示
 // ========================================
 
 const modal = document.querySelector("#image-modal");
@@ -108,10 +210,19 @@ const modalImage = document.querySelector("#modal-image");
 const closeButton = document.querySelector("#modal-close");
 
 
-// 画像をクリックしたとき
+// モーダルを開く関数
+function openModal(imageSrc) {
+
+    modalImage.src = imageSrc;
+
+    modal.classList.add("active");
+
+}
+
+
+// 完成イメージ・スポット画像をクリック
 document.addEventListener("click", function (event) {
 
-    // 完成イメージまたはスポット画像か確認
     if (
 
         event.target.matches(".gallery img") ||
@@ -120,12 +231,7 @@ document.addEventListener("click", function (event) {
 
     ) {
 
-        // クリックされた画像をモーダルに表示
-        modalImage.src = event.target.src;
-
-
-        // モーダルを表示
-        modal.classList.add("active");
+        openModal(event.target.src);
 
     }
 

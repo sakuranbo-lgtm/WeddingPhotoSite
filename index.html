@@ -47,19 +47,19 @@
 
 
 
-    <!-- 完成イメージ -->
+    <!-- アルバムデザイン -->
 
     <section class="section">
 
-        <h2>🖼️ 完成イメージ</h2>
+        <h2>📚 アルバムデザイン</h2>
 
-        <div class="gallery">
+        <p class="section-description">
+            思い出を彩る、おふたりだけの一冊。
+        </p>
 
-            <img src="images/test.png">
+        <div class="album-list" id="album-list">
 
-            <img src="images/sample2.jpg">
-
-            <img src="images/sample3.jpg">
+            <!-- albums.jsから自動生成 -->
 
         </div>
 
@@ -91,6 +91,32 @@
 
 </div>
 
+<!-- アルバム詳細モーダル -->
+
+<div id="album-modal" class="album-modal">
+
+    <button id="album-modal-close" class="album-modal-close">
+        ×
+    </button>
+
+    <div class="album-modal-content">
+
+        <h2 id="album-modal-title"></h2>
+
+        <p id="album-modal-description"></p>
+
+        <div
+            id="album-pages"
+            class="album-pages"
+        >
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="albums.js"></script>
 <script src="spots.js"></script>
 <script src="script.js"></script>
 
