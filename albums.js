@@ -27,7 +27,7 @@ const albums = [
             "自然体で温かみのあるナチュラルなデザイン",
 
         cover:
-            "images/albums/natural-cover.jpg",
+            "images/albums/test_album_2.png",
 
         pages: [
 
@@ -47,7 +47,7 @@ const albums = [
             "シンプルで洗練されたモダンなデザイン",
 
         cover:
-            "images/albums/modern-cover.jpg",
+            "images/albums/test_album_3.png",
 
         pages: [
 
