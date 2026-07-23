@@ -7,11 +7,11 @@ const albums = [
             "上品で洗練されたクラシカルなアルバムデザイン",
 
         cover:
-            "images/albums/elegance-cover.jpg",
+            "images/albums/test_album.png",
 
         pages: [
 
-            "images/albums/elegance-page1.jpg",
+            "images/albums/test_album_in.png",
 
             "images/albums/elegance-page2.jpg"
 
