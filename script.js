@@ -268,3 +268,45 @@ document.addEventListener("keydown", function (event) {
     }
 
 });
+
+// ========================================
+// アルバム詳細モーダル
+// ========================================
+
+const albumModal =
+    document.querySelector("#album-modal");
+
+const albumCloseButton =
+    document.querySelector("#album-modal-close");
+
+
+// ×ボタンで閉じる
+albumCloseButton.addEventListener("click", function () {
+
+    albumModal.classList.remove("active");
+
+});
+
+
+// 背景をクリックして閉じる
+albumModal.addEventListener("click", function (event) {
+
+    if (event.target === albumModal) {
+
+        albumModal.classList.remove("active");
+
+    }
+
+});
+
+
+// ESCキーで閉じる
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        albumModal.classList.remove("active");
+
+    }
+
+});
